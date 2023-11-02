@@ -12,12 +12,11 @@ body{
 }
 .page{
     display: flex;
-    width: 70vw;
     margin-left: auto;
     margin-right: auto;
 }
 .sidebar{
-    width: 15vw;
+    width: 20vw;
     border: 2px solid black;
     height: 100vh;
 }
@@ -48,7 +47,7 @@ body{
 .nav:hover{
     background: rgba(0, 0, 0, 0.422);
 }
-.nav > .icon{
+.icon{
     justify-self: center;
 }
 .content{
@@ -56,7 +55,22 @@ body{
     height: 100vh;
     border: 1px solid rgb(0, 128, 0);
 }
+
+
+
 .topbar{
     height: 15vh;
-    border:1px solid purple
+    border:1px solid purple;
+    background-color: rgba(0, 128, 0, 0.604);
+}
+.topbar > .top{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+.account{
+    display: flex;
+    justify-self: center;
+}
+.search_bar > *{
+    align-items: center;
 }
