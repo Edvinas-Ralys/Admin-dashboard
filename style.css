@@ -11,6 +11,7 @@ body{
     z-index: -1;
 }
 .page{
+    width: 80vw;
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -27,6 +28,9 @@ body{
 .icon{
     height: 2.5vh;
     width: auto; 
+}
+.avatar_icon{
+height: 5vh;
 }
 .nav_bar{
     display: grid;
@@ -51,12 +55,14 @@ body{
     justify-self: center;
 }
 .content{
-    width: 100vw;
+    width: 60vw;
     height: 100vh;
     border: 1px solid rgb(0, 128, 0);
 }
 
-
+.top{
+    height: 7vh;
+}
 
 .topbar{
     height: 15vh;
@@ -65,12 +71,61 @@ body{
 }
 .topbar > .top{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 2fr 1fr;
+}
+.search_bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .account{
-    display: flex;
-    justify-self: center;
+    display: grid;
+    grid-template-columns: fit-content(8ch) fit-content(8ch) 10vw;
+    gap:0.5vw;
+    justify-content: center;
 }
-.search_bar > *{
+.account > *{
+    place-self: center;
+}
+.search_bar > input{
+    width: 30vw;
+    height: 3vh;
+    border-radius: 10px;
+    border: 2px solid green;
+}
+.search_icon{
+    height: 3.5vh;
+}
+.bottom{
+    display: grid;
+    grid-template-columns: 1fr 0.3fr 1fr;
+}
+.left{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+}
+.left> *{
+    margin:0px;
+}
+.left > .icon{
+    grid-row: 1 / 3;
+    place-self: center;
+    height: 5.2vh;
+}
+.right{
+    grid-column: 3 / 4;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     align-items: center;
+}
+.right > .new, .upload, .share{
+    display: flex;
+    background-color: green;
+    height: 3vh;
+    width: 7vw;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3rem;
+
 }
