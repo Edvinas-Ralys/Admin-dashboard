@@ -1,14 +1,24 @@
-body{
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
+:root{
+    --text: #001533;
+    --background: #ffffff;
+    --primary: #febd62;
+    --secondary: #d2ffb3;
+    --accent: #e48601;
+    --selected:#e46701;
 }
-.background_image > img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    z-index: -1;
+
+@font-face {
+    font-family: 'bodonitownregular';
+    src: url('Fonts/Bodonitown-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+    font-family:'bodonitownregular' ;
+    overflow: hidden;
+    margin: 0;
+    background-color: var(--background);
 }
 .page{
     width: 80vw;
@@ -17,13 +27,24 @@ body{
     margin-right: auto;
 }
 .sidebar{
-    width: 20vw;
-    border: 2px solid black;
+    width: 15vw;
     height: 100vh;
+    display: grid;
+    grid-template-rows: repeat(9 1fr);
+    grid-template-columns: 1fr;
+    align-content: baseline;
+    background-color: var(--primary);    
 }
 .sidebar_logo{
     height: 3vh;
     width: auto;
+    place-self: center;
+}
+.sidebar_top{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    margin-bottom: 2vh;
+    margin-top: 2vh;
 }
 .icon{
     height: 2.5vh;
@@ -34,6 +55,7 @@ height: 5vh;
 }
 .nav_bar{
     display: grid;
+    margin-top: 2rem;
 }
 .nav_bar > *{
     display: grid;
@@ -41,15 +63,9 @@ height: 5vh;
     justify-content: center;
     align-items: center;
 }
-.sidebar{
-    display: grid;
-    grid-template-rows: repeat(9 1fr);
-    grid-template-columns: 1fr;
-    align-content: baseline;
-    background-color: rgba(0, 128, 0, 0.604);
-}
+
 .nav:hover{
-    background: rgba(0, 0, 0, 0.422);
+    background: var(--secondary);
 }
 .icon{
     justify-self: center;
@@ -57,7 +73,8 @@ height: 5vh;
 .content{
     width: 60vw;
     height: 100vh;
-    border: 1px solid rgb(0, 128, 0);
+    display: flex;
+    flex-direction: column;
 }
 
 .top{
@@ -66,8 +83,7 @@ height: 5vh;
 
 .topbar{
     height: 15vh;
-    border:1px solid purple;
-    background-color: rgba(0, 128, 0, 0.604);
+    background: linear-gradient( to right, var(--primary), var(--secondary));
 }
 .topbar > .top{
     display: grid;
@@ -127,5 +143,47 @@ height: 5vh;
     align-items: center;
     justify-content: center;
     border-radius: 3rem;
+}
 
+
+.content_main{
+    height: 85vh;
+    width: 60vw;
+    /* border: 2px solid black; */
+    display: flex;
+    background-color: var(--accent);
+}
+.projects{
+    /* border:2px solid orange; */
+    width: 38vw;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    height: 70vh;
+    overflow: scroll;
+    padding:1rem;
+}
+.feed{
+    border:2px solid gold;
+    width: 20vw;
+    height: 85vh;
+}
+.article{
+    border: 2px solid rgba(0, 128, 68, 0.702);
+    place-self: center;
+    background-color: rgba(82, 134, 107, 0.717);
+    border-radius: 1rem;
+    box-shadow: 5px 5px 15px;
+}
+.article:hover{
+    background-color: rgb(88, 217, 151);
+    border:2px solid black
+}
+.article > *{
+    text-align: center;
+}
+
+::-webkit-scrollbar{
+    width: 30px;
 }
